@@ -1,5 +1,7 @@
 package tw.shokunin;
 
+import tw.shokunin.validators.Validator;
+
 /**
  * Created by sethur on 12/05/2016.
  */
@@ -10,7 +12,10 @@ public class CreditCard {
     private String name;
     private String cvv;
 
+    private Validator<CreditCard> validator;
+
     public CreditCard(String number, String expiryDate, String name, String cvv) {
+        this();
         this.number = number;
         this.expiryDate = expiryDate;
         this.name = name;
@@ -18,6 +23,7 @@ public class CreditCard {
     }
 
     public CreditCard() {
+        validator = Validator.CREDIT_CARD_VALIDATOR;
     }
 
     public String getNumber() {
@@ -50,6 +56,10 @@ public class CreditCard {
 
     public void setCvv(String cvv) {
         this.cvv = cvv;
+    }
+
+    public boolean isValid(){
+        return validator.isValid(this);
     }
 
     @Override

@@ -19,8 +19,8 @@ public class ParserTest {
 
         assertThat(cards).hasSize(2);
         assertThat(cards).contains(
-                new CreditCard("1234 5678 1234 5678", "10/2015", "Shokunin 1", "123"),
-                new CreditCard("0000 5678 1234 5678", "10/2015", "Shokunin 1", "123"));
+                new CreditCard("1234567812345678", "10/2015", "Shokunin 1", "123"),
+                new CreditCard("0000567812345678", "10/2015", "Shokunin 1", "123"));
     }
 
 }

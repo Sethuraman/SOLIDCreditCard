@@ -23,7 +23,8 @@ public class Parser {
         for (String line : lines) {
             String[] split = line.split(",");
             if(split.length==4){
-                cards.add(createCreditCard(split));
+                CreditCard creditCard = createCreditCard(split);
+                if(creditCard.isValid()) cards.add(creditCard);
             }
         }
         return cards;
